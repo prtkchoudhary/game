@@ -1,0 +1,53 @@
+ Show dbs
+Create new database
+> Use database_name
+> Use thapar
+
+Create collection
+Here collection represents table
+>db.createCollection(“table_name”)
+>db.createCollection(“testable”)
+
+Go to the database
+See all the collection
+Presents using
+>show collections
+For delete
+>db.collection_name.drop()
+
+Insert many data into the collection
+using “insertMany” operation
+db.tablename.insertMany([{ }, { }, { }])
+
+insert one
+db.tablename.insertOne([{"id":1,"name":"raosahab","department":"mbbs"])
+
+Retrieve data
+>db.table_name.find();
+
+
+Select some particular value
+>db.table_name.find({attribute: {$option: value}}) 
+($eq $gt $gte $in $lt $lte $ne $nin)
+Delete row
+>db.table_name.deleteMany({attribute:value})
+
+Again show the records
+>db.table_name.find()
+the record with the name “ABC” has been deleted.
+
+
+
+(map reduce)
+{
+cust_id: "a123"
+amount:500
+status:"a"
+
+
+
+code
+usemapdb
+db.createCollection("cust")
+db.insertMany([{"id:"a123"},{..
+db.cust.aggregate([$match:{status:"A"}},{$group:{id:"$id",total:{$sum:"$amount"}}}])
